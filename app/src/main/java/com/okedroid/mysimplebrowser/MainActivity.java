@@ -1,0 +1,85 @@
+package com.okedroid.mysimplebrowser;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity {
+
+    String url = " ";
+    public WebView myWebView;
+//    deklarasi var mywebview tipe data object WebView
+//Ste
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+//    inisialisasi webview ke dalam resource id webview di layout
+        myWebView = (WebView) findViewById(R.id.webView);
+//menseting tampilan url ke dalam tampilan webview
+        myWebView.setWebViewClient(new WebViewClient());
+//mengaktifkan javascript (secara default disable)
+
+
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+    }
+
+
+
+
+    public void goToURL(View view) {
+        //Menginisialisasi object editext di dalam resoure id layout
+        EditText editText = (EditText) findViewById(R.id.urlText);
+        //mengassign atau menentukan nilai url ke dalam bentuk editext string
+        url = editText.getText().toString();
+       //meload url berdasarkan editext
+        myWebView.loadUrl(url);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                return true;
+            case R.id.btn_goback:
+                myWebView.goBack();
+                return true;
+            case R.id.btn_gofoward:
+                myWebView.goForward();
+                return true;
+            case R.id.btn_refresh:
+                myWebView.reload();
+                return true;
+            case R.id.btn_stop:
+                myWebView.stopLoading();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+}
+
+
+
+
+
+
+

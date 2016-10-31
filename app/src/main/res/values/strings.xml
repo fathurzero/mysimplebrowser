@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MySimpleBrowser</string>
+    <string name="refresh">Refresh</string>
+    <string name="stop">Stop</string>
+    <string name="goback">Go Back</string>
+    <string name="forward">Forward</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
