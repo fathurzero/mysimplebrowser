@@ -12,20 +12,20 @@
         app:showAsAction="never"/>
 
     <item
-        android:id="@+id/btn_refresh"
+        android:id="@+id/tombol_refresh"
         android:title="@string/refresh"
         />
 
     <item
-        android:id="@+id/btn_stop"
+        android:id="@+id/tombol_stop"
         android:title="@string/stop"/>
 
     <item
-        android:id="@+id/btn_goback"
+        android:id="@+id/tombol_goback"
         android:title="@string/goback"/>
 
     <item
-        android:id="@+id/btn_gofoward"
+        android:id="@+id/tombol_gofoward"
         android:title="@string/forward"/>
 
 </menu>

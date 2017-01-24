@@ -34,13 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
             /*
             Kode untuk mengakses icon menu yang tidak tampil di perangkat android layar kecil
-            
+
 
              */
         }
-
-
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -54,9 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+
+        //method untuk mengaktifkan java script
+
     }
-
-
 
 
     public void goToURL(View view) {
@@ -80,18 +78,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            //konten di menu item
             case R.id.action_settings:
                 return true;
-            case R.id.btn_goback:
+            case R.id.tombol_goback:
                 myWebView.goBack();
                 return true;
-            case R.id.btn_gofoward:
+            case R.id.tombol_gofoward:
                 myWebView.goForward();
                 return true;
-            case R.id.btn_refresh:
+            case R.id.tombol_refresh:
                 myWebView.reload();
                 return true;
-            case R.id.btn_stop:
+            case R.id.tombol_stop:
                 myWebView.stopLoading();
                 return true;
             default:
